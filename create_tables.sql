@@ -44,6 +44,10 @@ CREATE TABLE Article (
     discount NUMBER(10,2) NOT NULL
 );
 
+CREATE TABLE LockedArticle (
+  articleid NUMBER NOT NULL PRIMARY KEY
+);
+
 GRANT ALL ON ARTICLE TO C##SZAMT2;
 GRANT ALL ON Warehouse TO C##SZAMT2;
 GRANT ALL ON Subcategory TO C##SZAMT2;
