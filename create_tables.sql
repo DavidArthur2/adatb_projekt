@@ -1,0 +1,51 @@
+CREATE TABLE Subcategory (
+    id NUMBER NOT NULL PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL,
+    description VARCHAR2(100) NOT NULL,
+    categoryid NUMBER NOT NULL
+);
+
+CREATE TABLE Warehouse (
+    articleid NUMBER NOT NULL PRIMARY KEY,
+    quantity NUMBER NOT NULL
+);
+
+CREATE TABLE Category (
+    id NUMBER NOT NULL PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL,
+    description VARCHAR2(100) NOT NULL
+);
+
+CREATE TABLE Customer (
+    id NUMBER NOT NULL PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL,
+    tel VARCHAR2(100) NOT NULL,
+    email VARCHAR2(100) NOT NULL,
+    address VARCHAR2(100) NOT NULL,
+    money NUMBER(10,2) NOT NULL
+);
+
+CREATE TABLE OrderTable (
+    id NUMBER NOT NULL PRIMARY KEY,
+    customerid NUMBER NOT NULL,
+    articleid NUMBER NOT NULL,
+    quantity NUMBER NOT NULL,
+    total NUMBER NOT NULL,
+    orderdate DATE NOT NULL
+);
+
+CREATE TABLE Article (
+    id NUMBER NOT NULL PRIMARY KEY,
+    subcatid NUMBER,
+    name VARCHAR2(100) NOT NULL,
+    price NUMBER NOT NULL,
+    discount NUMBER(10,2) NOT NULL
+);
+
+
+GRANT ALL ON ARTICLE TO C##SZAMT2;
+GRANT ALL ON Warehouse TO C##SZAMT2;
+GRANT ALL ON Subcategory TO C##SZAMT2;
+GRANT ALL ON Category TO C##SZAMT2;
+GRANT ALL ON Customer TO C##SZAMT2;
+GRANT ALL ON OrderTable TO C##SZAMT2;
