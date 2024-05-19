@@ -45,7 +45,7 @@ CREATE TABLE Article (
 );
 
 CREATE TABLE LockedArticle (
-  articleid NUMBER NOT NULL
+  articleid NUMBER NOT NULL PRIMARY KEY
 );
 
 GRANT ALL ON ARTICLE TO C##SZAMT2;
