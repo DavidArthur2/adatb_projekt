@@ -211,6 +211,7 @@ end top5articles;
 
 /
 
-select * from top5articles(6);
-
+begin
+    main_order(5, 2, 3);
+end;
 /

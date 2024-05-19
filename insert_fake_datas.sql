@@ -41,11 +41,13 @@ INSERT INTO Warehouse (articleid, quantity) VALUES (11, 25);
 INSERT INTO Warehouse (articleid, quantity) VALUES (12, 30);
 
 -- Beszúrjuk a vásárlókat
-INSERT INTO Customer (id, name, tel, email, address, money) VALUES (1, 'John Doe', '1234567890', 'john.doe@example.com', '123 Main St', 500.00);
-INSERT INTO Customer (id, name, tel, email, address, money) VALUES (2, 'Jane Smith', '0987654321', 'jane.smith@example.com', '456 Elm St', 300.00);
-INSERT INTO Customer (id, name, tel, email, address, money) VALUES (3, 'Alice Johnson', '5555555555', 'alice.johnson@example.com', '789 Oak St', 400.00);
-INSERT INTO Customer (id, name, tel, email, address, money) VALUES (4, 'Bob Brown', '6666666666', 'bob.brown@example.com', '101 Pine St', 450.00);
-INSERT INTO Customer (id, name, tel, email, address, money) VALUES (5, 'Charlie Davis', '7777777777', 'charlie.davis@example.com', '202 Birch St', 350.00);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (1, 'John Doe', '1234567890', 'john.doe@example.com', '123 Main St', 500.00, 'pw123', 0);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (2, 'Jane Smith', '0987654321', 'jane.smith@example.com', '456 Elm St', 300.00, 'pw123', 0);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (3, 'Alice Johnson', '5555555555', 'alice.johnson@example.com', '789 Oak St', 400.00, 'pw123', 0);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (4, 'Bob Brown', '6666666666', 'bob.brown@example.com', '101 Pine St', 450.00, 'pw123', 0);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (5, 'Charlie Davis', '7777777777', 'charlie.davis@example.com', '202 Birch St', 350.00, 'pw123', 0);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (6, 'David Arthur', '7777777777', 'arti@yahoo.com', '202 Birch St', 35000.00, 'admin', 2);
+INSERT INTO Customer (id, name, tel, email, address, money, password, admin) VALUES (7, 'Manager', '7777777777', 'manager@yahoo.com', '202 Birch St', 35000.00, 'admin', 1);
 
 -- Beszúrjuk a rendeléseket
 INSERT INTO OrderTable (id, customerid, articleid, quantity, total, orderdate) VALUES (1, 1, 1, 1, 999.99, SYSDATE);

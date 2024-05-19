@@ -22,7 +22,9 @@ CREATE TABLE Customer (
     tel VARCHAR2(100) NOT NULL,
     email VARCHAR2(100) NOT NULL,
     address VARCHAR2(100) NOT NULL,
-    money NUMBER(10,2) NOT NULL
+    money NUMBER(10,2) NOT NULL,
+    password VARCHAR2(24) NOT NULL,
+    admin NUMBER NOT NULL
 );
 
 CREATE TABLE OrderTable (
@@ -42,10 +44,11 @@ CREATE TABLE Article (
     discount NUMBER(10,2) NOT NULL
 );
 
-
 GRANT ALL ON ARTICLE TO C##SZAMT2;
 GRANT ALL ON Warehouse TO C##SZAMT2;
 GRANT ALL ON Subcategory TO C##SZAMT2;
 GRANT ALL ON Category TO C##SZAMT2;
 GRANT ALL ON Customer TO C##SZAMT2;
 GRANT ALL ON OrderTable TO C##SZAMT2;
+
+commit;
