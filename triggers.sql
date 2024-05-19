@@ -21,3 +21,23 @@ BEGIN
 
 END warehouse_trigger;
 /
+CREATE OR REPLACE TRIGGER category_delete_trigger
+AFTER
+DELETE
+ON CATEGORY
+FOR EACH ROW
+BEGIN
+    DELETE FROM SUBCATEGORY WHERE CATEGORYID = :OLD.id;
+END category_delete_trigger;
+/
+CREATE OR REPLACE TRIGGER subcategory_delete_trigger
+AFTER
+DELETE
+ON SUBCATEGORY
+FOR EACH ROW
+BEGIN
+    UPDATE ARTICLE SET SUBCATID = null WHERE SUBCATID = :OLD.id;
+END subcategory_delete_trigger;
+/
+select * from ARTICLE;
+/
