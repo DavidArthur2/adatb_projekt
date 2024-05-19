@@ -34,3 +34,40 @@ BEGIN
 
 END insert_customer;
 /
+CREATE OR REPLACE PROCEDURE eladasok_subcategory is
+    CURSOR cur IS
+        SELECT article.subcatid AS ID, sum(ordertable.quantity) as eladasok FROM ARTICLE, ORDERTABLE
+        WHERE article.id = ordertable.articleid
+        GROUP BY article.subcatid ORDER BY eladasok DESC;
+    ord NUMBER := 1;
+    name VARCHAR2(100);
+begin
+
+    DBMS_OUTPUT.PUT_LINE('Legeladottabb subcategoryk sorrendben:');
+    for i in cur LOOP
+        SELECT subcategory.name INTO name FROM SUBCATEGORY where i.id = subcategory.id;
+        DBMS_OUTPUT.PUT_LINE(ord || '. ' || name || ' : ' || i.eladasok || ' darab');
+        ord := ord + 1;
+    end loop;
+end eladasok_subcategory;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

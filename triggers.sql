@@ -28,6 +28,7 @@ ON CATEGORY
 FOR EACH ROW
 BEGIN
     DELETE FROM SUBCATEGORY WHERE CATEGORYID = :OLD.id;
+    COMMIT;
 END category_delete_trigger;
 /
 CREATE OR REPLACE TRIGGER subcategory_delete_trigger
@@ -37,6 +38,7 @@ ON SUBCATEGORY
 FOR EACH ROW
 BEGIN
     UPDATE ARTICLE SET SUBCATID = null WHERE SUBCATID = :OLD.id;
+    COMMIT;
 END subcategory_delete_trigger;
 /
 select * from ARTICLE;
