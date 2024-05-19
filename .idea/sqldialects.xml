@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/create_users.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/customer_functions.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/insert_fake_datas.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/insert_functions.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/projekt.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/triggers.sql" dialect="Oracle" />
   </component>
