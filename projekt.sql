@@ -212,6 +212,7 @@ end top5articles;
 /
 
 begin
-    main_order(5, 2, 3);
+    main_order(3, 2, 1);
 end;
 /
+select * from ORDERTABLE;

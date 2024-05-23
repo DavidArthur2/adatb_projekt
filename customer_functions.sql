@@ -16,7 +16,7 @@ BEGIN
                customerTel,
                customerEmail,
                customerAddress,
-               0.0);
+               0.0, 'pw123', 0);
     END IF;
 
     IF SQL%ROWCOUNT > 0 OR row_num > 0 THEN  -- Belett szurva
@@ -52,7 +52,10 @@ begin
 end eladasok_subcategory;
 
 
-
+/
+begin
+    eladasok_subcategory();
+end;
 
 
 
